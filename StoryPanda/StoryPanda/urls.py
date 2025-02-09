@@ -18,11 +18,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ninja import NinjaAPI
+from apps.users.api.v1.endpoints import router as user_router
 
-api = NinjaAPI()
+
+api = NinjaAPI(
+    title="StoryPanda API", version="1.0.0", description="StoryPanda API documentation"
+)
+
+# Add routers - note the path format
+api.add_router("/v1/users/", user_router, tags=["Users"])
 
 
-@api.get("/add")
+# Your test endpoint - consider moving this to a dedicated endpoints file
+@api.get("/add", tags=["Test"])
 def add(request, a: int, b: int):
     return {"result": a + b}
 

@@ -1,12 +1,14 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class User(models.Model):
-    username = models.CharField(max_length=150, unique=True)
+class User(AbstractUser):
     email = models.EmailField(unique=True)
-    password = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        app_label = "users"
 
     def __str__(self):
         return f"Username: {self.username} - Email: {self.email}"
