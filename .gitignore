@@ -1,0 +1,66 @@
+# === Python Bytecode ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual Environments ===
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# === Django Stuff ===
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static_root/
+local_settings.py
+
+# === Ninja API Auto-generated Files ===
+*.schema.json  # In case of schema export
+
+# === Testing / Coverage ===
+.coverage
+.coverage.*
+.cache
+.noseids
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+pytest_cache/
+.tox/
+.pytest_cache/
+
+# === IDEs and Editors ===
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Git ===
+*.orig
+*.swp
+*~
+!.gitkeep  # Keep empty folders tracked intentionally
+
+# === Docker (If Applicable) ===
+*.pid
+*.env
+.env.*
+
+# === Migrations (Optional) ===
+**/migrations/*.py
+**/migrations/*.pyc
