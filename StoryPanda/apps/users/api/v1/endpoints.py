@@ -1,26 +1,5 @@
-# from ninja import Router
-# from apps.users.api.v1.schemas import UserIn, UserOut
-# from django.shortcuts import get_object_or_404
-# from .services import create_user
-# from apps.users.models import User
-
-# router = Router(tags=["Users"])
-
-
-# @router.post("/register", response=UserOut)
-# def register_user(request, data: UserIn):
-#     return create_user(data)
-
-
-# @router.get("/{user_id}", response=UserOut)
-# def get_user_detail(request, user_id: int):
-#     user = get_object_or_404(User, id=user_id)
-#     return user
-
-
-# apps/users/api/v1/endpoints.py
 from ninja import Router
-from .schemas import UserOut, UserIn  # Create these schema classes
+from .schemas import UserOut, UserIn
 
 router = Router()
 

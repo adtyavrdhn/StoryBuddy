@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path
 from ninja import NinjaAPI
 from apps.users.api.v1.endpoints import router as user_router
+from apps.auth.api.v1.endpoints import router as auth_router
 
 
 api = NinjaAPI(
@@ -27,12 +28,6 @@ api = NinjaAPI(
 
 # Add routers - note the path format
 api.add_router("/v1/users/", user_router, tags=["Users"])
-
-
-# Your test endpoint - consider moving this to a dedicated endpoints file
-@api.get("/add", tags=["Test"])
-def add(request, a: int, b: int):
-    return {"result": a + b}
-
+api.add_router("/v1/auth/", auth_router, tags=["Auth"])
 
 urlpatterns = [path("admin/", admin.site.urls), path("api/", api.urls)]
