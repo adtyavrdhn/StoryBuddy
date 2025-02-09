@@ -19,8 +19,7 @@ from django.contrib import admin
 from django.urls import path
 from ninja import NinjaAPI
 from apps.users.api.v1.endpoints import router as user_router
-from apps.auth.api.v1.endpoints import router as auth_router
-
+from apps.auth.api.v1.endpoints import auth_router
 
 api = NinjaAPI(
     title="StoryPanda API", version="1.0.0", description="StoryPanda API documentation"
