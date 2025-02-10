@@ -11,7 +11,7 @@ class User(AbstractUser):
         app_label = "users"
 
     def __str__(self):
-        return f"Username: {self.username} - Email: {self.email}"
+        return f"Email: {self.email}"
 
     def __repr__(self):
-        return f"{self.username} - {self.email}"
+        return f"{self.email}"
